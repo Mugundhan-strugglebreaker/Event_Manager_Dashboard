@@ -1,24 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useContext } from "react";
+import Sidebar from "./component/sidebar/Sidebar";
+import Topbar from "./component/topbar/Topbar";
+import './App.css'
+import Home from "./pages/home/Home";
+import Widget from "./component/widget/Widget";
+import UserDetails from "./context/UserDetails";
+
+
+export const UserContext = React.createContext()
 
 function App() {
+  // const user1 = useContext(UserContext)
+  // console.log(user1)
+  const user =  UserDetails(2,'V')
+  console.log("--->"+JSON.stringify(user));
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <UserContext.Provider value={user}>
+      <div>
+        <Topbar/>
+        <div className="container">
+          <Sidebar/>
+          <Home/>
+        </div>
+        
+      </div>
+    </UserContext.Provider>
   );
 }
 

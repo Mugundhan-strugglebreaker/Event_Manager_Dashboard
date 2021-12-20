@@ -1,0 +1,21 @@
+.widget{
+    padding: 20px;
+    margin: 20px;
+    box-shadow: -1px 7px 19px -7px rgba(0,0,0,0.75);
+-webkit-box-shadow: -1px 7px 19px -7px rgba(0,0,0,0.75);
+-moz-box-shadow: -1px 7px 19px -7px rgba(0,0,0,0.75);
+}
+.widgetTable{
+    width: 100%;
+    border-spacing: 20px;
+}
+.widgetTh{
+    text-align: left;
+    color: rgb(48, 48, 241);
+}
+.widgetEventType,.widgetDate,.widgetDuration,.widgetLocation{
+    font-weight: 300;
+}
+.widgetCredits,.widgetEventName,.widgetSNO{
+    font-weight: 600;
+}

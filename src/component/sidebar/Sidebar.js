@@ -1,6 +1,7 @@
 import React from 'react'
 import './sidebar.css'
 import {LineStyle,Timeline,Person,Event,History,NotificationsActive,Message} from "@material-ui/icons"
+import { Link } from 'react-router-dom'
 function Sidebar() {
     return (
         <div className='sidebar'>
@@ -8,27 +9,33 @@ function Sidebar() {
                 <div className='sidebarMenu'>
                     <h3 className='sidebarTitle'>Dashboard</h3>
                     <ul className='sidebarList'>
-                        <li className='sidebarListItem active'>
-                            <LineStyle className='sidebarIcon'/>
-                            Home
-                        </li>
+                        <Link to="/" className='link'>
+                            <li className='sidebarListItem active'>
+                                <LineStyle className='sidebarIcon'/>
+                                Home
+                            </li>
+                        </Link>
                         <li className='sidebarListItem'>
                             <Timeline className='sidebarIcon'/>
                             Analytics
                         </li>
-                        <li className='sidebarListItem'>
-                            <Person className='sidebarIcon'/>
-                            Profile
-                        </li>
+                        <Link to="/profile" className='link'>
+                            <li className='sidebarListItem'>
+                                <Person className='sidebarIcon'/>
+                                Profile
+                            </li>
+                        </Link>
                     </ul>
                 </div>
                 <div className='sidebarMenu'>
                     <h3 className='sidebarTitle'>Quick Menu</h3>
                     <ul className='sidebarList'>
-                        <li className='sidebarListItem '>
-                            <Event className='sidebarIcon'/>
-                            Event
-                        </li>
+                        <Link to="/events" className='link'>
+                            <li className='sidebarListItem '>
+                                <Event className='sidebarIcon'/>
+                                Event
+                            </li>
+                        </Link>
                         <li className='sidebarListItem'>
                             <History className='sidebarIcon'/>
                             Event History

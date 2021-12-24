@@ -38,30 +38,6 @@ function Widget() {
                 <tbody>
                     <UpcomingEvents/>
                 </tbody>
-                {/* <tr className='widgetTr'>
-                    <td className='widgetSNO'>
-                        1
-                    </td>
-                    <td className='widgetEventName'>
-                        React Js Learing
-                    </td>
-                    <td className='widgetEventType'>
-                        Learning
-                    </td>
-                    <td className='widgetDate'>
-                        20-12-2021
-                    </td>
-                    <td className='widgetDuration'>
-                        8 Hours
-                    </td>
-                    <td className='widgetLocation'>
-                        Online (Gmeet)
-                    </td>
-                    <td className='widgetCredits'>
-                        150
-                    </td>
-                </tr> */}
-                
             </table>
         </div>
     )

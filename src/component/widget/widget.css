@@ -8,6 +8,9 @@
 .widgetTable{
     width: 100%;
     border-spacing: 20px;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin-top: 15px;
 }
 .widgetTh{
     text-align: left;

@@ -1,18 +1,17 @@
-import React,{useState,useEffect, useContext} from 'react'
-import './eventList.css'
+import React, { useContext, useEffect, useState } from 'react'
+import "./eventListForV.css"
 import { DataGrid } from '@mui/x-data-grid';
+import { UserContext } from '../../App';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
-import { UserContext } from '../../App'
 
-function EventList() {
+function EventListForV() {
     const userDetails = useContext(UserContext)
     const [user,setUser] = useState({})
     const [data,setData] = useState([])
     useEffect(()=>{
         setUser(userDetails)
-        axios.post("http://localhost:9000/events/admin/get",{
-            "id":userDetails.emp_id
+        axios.post("http://localhost:9000/events/volunteer/get",{
+            "emp_id":userDetails.emp_id
         }).then((response)=>{
             setData(response.data)
         }).catch((err)=>{
@@ -21,8 +20,9 @@ function EventList() {
     },[])
     const columns = [
         { field: 'id', headerName: 'S.NO', width: 90  },
-        { field: 'event_name', headerName: 'Event name', width: 200 },
+        { field: 'event_name', headerName: 'Event name', width: 150 },
         { field: 'event_type_name', headerName: 'Event Type', width: 130 },
+        {field:'Admin',headerName:"Created By",width:100},
         {
           field: 'date',
           headerName: 'Date',
@@ -37,7 +37,7 @@ function EventList() {
           {
             field: 'location',
             headerName: 'Location',
-            width: 150,
+            width: 100,
           },
           {
             field: 'credits',
@@ -57,34 +57,26 @@ function EventList() {
             width : 90,
             renderCell:(params)=>{
                 return(
-                        <Link to={"/event/view/"+params.row.event_id} state={params.row}>
                             <button className='eventListEdit'>View</button>
-                        </Link>
                 )
             }
           }
       ];
-    
     return (
-        <div className='eventList'>
-            <div className='eventsTitleContainer'>
-                <h1 className='eventsTitle'>Events</h1>
-                <Link to="/create/event">
-                    <button className='eventAddButton'>Create</button>
-                </Link>
+        <div className='eventListForV'>
+            <h1>Events</h1>
+            <div style={{ height: 500, width: '97%', marginTop:10 , marginRight:20 }}>
+                    <DataGrid
+                        rows={data}
+                        columns={columns}
+                        pageSize={7}
+                        rowsPerPageOptions={[7]}
+                        // disableSelectionOnClick
+                        // checkboxSelection
+                    />
             </div>
-            <div style={{ height: 500, width: '100%', marginTop:10 }}>
-                <DataGrid
-                    rows={data}
-                    columns={columns}
-                    pageSize={7}
-                    rowsPerPageOptions={[7]}
-                    // disableSelectionOnClick
-                    // checkboxSelection
-                />
-             </div>
         </div>
     )
 }
 
-export default EventList
+export default EventListForV

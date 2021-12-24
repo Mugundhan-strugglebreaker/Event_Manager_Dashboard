@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 function UserDetails(id,role) {
-    const [user,setUser] = useState([])
+    const [user,setUser] = useState({})
     const [err,setError] =  useState('')
     useEffect(()=>{
         axios.get(`http://localhost:9000/employee/${id}`)

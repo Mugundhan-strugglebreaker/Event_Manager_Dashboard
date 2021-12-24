@@ -45,7 +45,7 @@ function UpcomingEvents() {
                             {n.event_name}
                         </td>
                         <td className='widgetEventType'>
-                            {n.event_type}
+                            {n.event_type_name}
                         </td>
                         <td className='widgetDate'>
                             {n.date}

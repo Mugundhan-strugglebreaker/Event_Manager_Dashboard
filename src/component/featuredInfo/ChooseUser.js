@@ -13,7 +13,7 @@ function ChooseUser() {
     const user = useContext(UserContext)
     const [userDetails,setUserDetails] = useState({});
     const [info,setInfo] = useState({})
-    let role = userDetails.role
+    let role = user.role
     useEffect(()=>{
         if(user){
             setUserDetails({
@@ -57,21 +57,21 @@ function ChooseUser() {
                     <span className='featuredTitle'>Events Registered</span>
                     <div className='featuredContainer'>
                         <Event className='featuredIcon'/>
-                        <span className='eventsCreated'>{noOfEventRegistered}</span>
+                        <span className='eventsCreated'>{info.RegCount}</span>
                     </div>
                 </div>
                 <div className='featuredItem'>
                     <span className='featuredTitle'>Events Attempted</span>
                     <div className='featuredContainer'>
                         <EventAvailable className='featuredIcon'/>
-                        <span className='eventsCreated'>{noOfEventAttempted}</span>
+                        <span className='eventsCreated'>{info.AttemptCount}</span>
                     </div>
                 </div>
                 <div className='featuredItem'>
                     <span className='featuredTitle'>Credits Gained</span>
                     <div className='featuredContainer'>
                         <Redeem className='featuredIcon'/>
-                        <span className='eventsCreated'>{creditsGained}</span>
+                        <span className='eventsCreated'>{info.Credits}</span>
                     </div>
                 </div>
             </div>

@@ -1,0 +1,48 @@
+.createEvent{
+    flex: 4;
+    margin-left: 50px;
+}
+.createEventForm{
+    display: flex;
+    flex-wrap: wrap;
+}
+.createEventItem{
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    margin-right: 20px;
+}
+.createEventItem>label{
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    color: rgb(152,150 ,150 );
+}
+.createEventItem>input{
+    height: 20px;
+    padding: 10px;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+.createEventItem.Desc>input{
+    height: 40px;
+    padding: 10px;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+.createEventButton{
+    width: 200px;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    background-color: darkblue;
+    color: white;
+    margin-top: 45px;
+    margin-left: 630px;
+}
+.error{
+    color: red;
+    margin-top: 5px;
+    font-weight: 700;
+}

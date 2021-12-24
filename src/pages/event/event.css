@@ -1,0 +1,157 @@
+.event{
+    flex: 4;
+    padding: 20px;
+}
+.eventContainer{
+    display: flex;
+}
+.editEvent{
+    flex: 2;
+    padding: 20px;
+    box-shadow: -1px 7px 19px -7px rgba(0,0,0,0.75);
+-webkit-box-shadow: -1px 7px 19px -7px rgba(0,0,0,0.75);
+-moz-box-shadow: -1px 7px 19px -7px rgba(0,0,0,0.75);
+}
+.viewEvent{
+    flex: 3;
+    margin-left: 20px;
+    padding: 20px;
+    box-shadow: -1px 7px 19px -7px rgba(0,0,0,0.75);
+-webkit-box-shadow: -1px 7px 19px -7px rgba(0,0,0,0.75);
+-moz-box-shadow: -1px 7px 19px -7px rgba(0,0,0,0.75);
+}
+.viewEventTopTitle{
+    display: flex;
+    flex-direction: column;
+    /* margin-left: 20px; */
+  
+}
+.viewEventEventName{
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    font-size: 25px !important;
+    margin-bottom: 10px;
+}
+.viewEventEventNametxt{
+    margin-left: 5px;
+    color: darkblue;
+}
+.viewEventEventDesc{
+    font-weight:400;
+    margin-left: 29px;
+}
+.viewEventBottomTitle{
+    margin-top: 20px;
+}
+.viewEventInfo{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.viewEventInfotxt{
+    font-weight: 400;
+    margin-left: 10px;
+}
+.viewEventInfotxtT{
+    font-weight: 400;
+    margin-left: 10px;
+    color: red;
+}
+.viewEventInfotxtF{
+    font-weight: 400;
+    margin-left: 10px;
+    color: darkolivegreen;
+}
+.viewEventRegAttempt{
+    margin-top: 20px;
+}
+.viewEventTable{
+    width: 100%;
+    border-spacing: 20px;
+    border-style: dotted;
+    border: 1px solid black;
+    border-radius: 10px;
+
+}
+.viewEventTh{
+    text-align: left;
+    color: rgb(48, 48, 241);
+}
+.viewEventTr{
+    margin-left: 5px;
+}
+.viewEventStatus{
+    font-weight: 600;
+}
+.createEventForm{
+    display: flex;
+    flex-wrap: wrap;
+}
+.editEventItem{
+    width: 400px;
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 25px;
+}
+.editEventItem>label{
+    
+    width: 200px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    color: rgb(152,150 ,150 );
+}
+.editEventtxt>input{
+    height: 20px;
+    padding: 5px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+.editEventButton{
+    width: 65px;
+    height: 30px;
+    border-radius: 10px;
+    border: none;
+    background-color: royalblue;
+    color: white;
+    cursor: pointer;
+}
+.deleteEventButton{
+    width: 65px;
+    height: 30px;
+    border-radius: 10px;
+    border: none;
+    background-color: red;
+    color: white;
+    cursor: pointer;
+}
+.editEventItem.Desc>input{
+    height: 40px;
+    padding: 10px;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+.buttonItem{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.error{
+    color: red;
+    margin-top: 5px;
+    font-weight: 700;
+    margin-left: 10px;
+    font-size: 14px;
+}
+.editEventtxt{
+    display: flex;
+    flex-direction: column;
+}
+.editDeleteContainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

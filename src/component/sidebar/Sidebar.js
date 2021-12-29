@@ -1,6 +1,6 @@
 import React from 'react'
 import './sidebar.css'
-import {LineStyle,Timeline,Person,Event,History,NotificationsActive,Message} from "@material-ui/icons"
+import {LineStyle,Timeline,Person,Event,History,NotificationsActive,Message, EventNote} from "@material-ui/icons"
 import { Link } from 'react-router-dom'
 function Sidebar() {
     return (
@@ -15,10 +15,10 @@ function Sidebar() {
                                 Home
                             </li>
                         </Link>
-                        <li className='sidebarListItem'>
+                        {/* <li className='sidebarListItem'>
                             <Timeline className='sidebarIcon'/>
                             Analytics
-                        </li>
+                        </li> */}
                         <Link to="/profile" className='link'>
                             <li className='sidebarListItem'>
                                 <Person className='sidebarIcon'/>
@@ -36,10 +36,12 @@ function Sidebar() {
                                 Event
                             </li>
                         </Link>
-                        <li className='sidebarListItem'>
-                            <History className='sidebarIcon'/>
-                            Event History
-                        </li>
+                        <Link to="/allevents" className='link'>
+                            <li className='sidebarListItem'>
+                                <EventNote className='sidebarIcon'/>
+                                All Events
+                            </li>
+                        </Link>
                         <li className='sidebarListItem'>
                             <Person className='sidebarIcon'/>
                             Volunteers

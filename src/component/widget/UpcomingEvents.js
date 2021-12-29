@@ -34,8 +34,13 @@ function UpcomingEvents() {
     let i=1;
     const data = ExtarctUpcomingEvents() 
     console.log(data);
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    var yyyy = today.getFullYear();
+    today = yyyy+ '-' + mm + '-' + dd;
     return (
-        data.filter(d => new Date(d.date) - new Date() >= 0 ).map( n=>{
+        data.filter(d => new Date(d.date) - new Date() >= 0 || d.date===today ).map( n=>{
             return(
                 <tr className='widgetTr' key={n.event_id}>
                         <td className='widgetSNO'>

@@ -1,0 +1,72 @@
+.viewEventForReg{
+    flex: 4;
+    padding: 20px;
+    margin: 20px;
+    margin-top: 5px;
+    box-shadow: -1px 7px 19px -7px rgba(0,0,0,0.75);
+-webkit-box-shadow: -1px 7px 19px -7px rgba(0,0,0,0.75);
+-moz-box-shadow: -1px 7px 19px -7px rgba(0,0,0,0.75);
+}
+.eventTitle{
+    color: darkblue;
+}
+.viewEventTitleContainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.eventTitleContainer{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+.eventContainer{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+
+}
+.eventItemsContainer{
+    width: 500px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.eventTextEName{
+    font-weight: 700;
+    font-size: 25px;
+    margin-left: 20px;
+}
+.eventText{
+    margin-left: 20px;
+}
+.eventIcon{
+    color: rgb(3, 3, 7);
+}
+.eventRegButton{
+    border: none;
+    border-radius: 10px;
+    padding: 10px 15px;
+    background-color: darkblue;
+    color: white;
+    cursor: pointer;
+    margin-right: 20px; 
+ }
+ .emojiContainer{
+     display: flex;
+     align-items: center;
+     margin-top: 0px;
+     margin-left: 0px;
+ }
+ .emojiContainer>span{
+     margin-left: 5px;
+ }
+ .heartIcon{
+     color: red;
+ }
+ .lolIcon{
+     color: rgb(243, 243, 21);
+ }
+ .fireIcon{
+     color: darkred;
+ }

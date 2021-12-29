@@ -7,7 +7,16 @@ import "./profile.css"
 function Profile() {
     const navigate = useNavigate()
     const userDetails = useContext(UserContext)
-    const [user,setUser] = useState(userDetails)
+    const [user,setUser] = useState({
+        
+            "emp_id":0,
+            "emp_name":"",
+            "dept":"",
+            "email":"",
+            "phone_number":"",
+            "role":""
+         
+    })
     const [updateUser,setUpdateUser] = useState(user)
     const [errors,setErrors] = useState({})
     const [isSubmit,setSubmit] = useState(false)
@@ -38,20 +47,34 @@ function Profile() {
         setUpdateUser(user)
     }
     useEffect(()=>{
+        console.log("Update outside-->")
         if(Object.keys(errors).length===0 && isSubmit){
+            console.log("If call"+JSON.stringify(updateUser))
             axios.post("http://localhost:9000/update/profile",updateUser)
             .then(response=>{
-                console.log(response)
-                // navigate("/")
-                window.location.href = "/";
-                //window.location.reload("/")
+                console.log("Called -->"+JSON.stringify(response))
             })
             .catch(err=>{
                 alert('Error ',err)
                 navigate("/events")
             })
+        }else{
+            console.log("Else in update")
+            setErrors({...errors})
+            setUser({...user})
         }
     },[updateUser])
+    useEffect(()=>{
+        console.log("Get call")
+        axios.get(`http://localhost:9000/employee/${userDetails.emp_id}`)
+        .then(response=>{
+            setUser({...response.data,'role':userDetails.role})
+        })
+        .catch(err=>{
+            alert("Error "+err)
+        })
+
+    },[isSubmit])
     return (
         <div className='profile'>
             <h1 className='profileTitle'>Profile</h1>

@@ -3,6 +3,7 @@ import "./eventListForV.css"
 import { DataGrid } from '@mui/x-data-grid';
 import { UserContext } from '../../App';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 function EventListForV() {
     const userDetails = useContext(UserContext)
@@ -57,7 +58,9 @@ function EventListForV() {
             width : 90,
             renderCell:(params)=>{
                 return(
-                            <button className='eventListEdit'>View</button>
+                            <Link to={"/event/view/"+params.row.event_id} state={params.row}>
+                              <button className='eventListEdit'>View</button>
+                            </Link>
                 )
             }
           }
@@ -71,7 +74,7 @@ function EventListForV() {
                         columns={columns}
                         pageSize={7}
                         rowsPerPageOptions={[7]}
-                        // disableSelectionOnClick
+                        disableSelectionOnClick
                         // checkboxSelection
                     />
             </div>

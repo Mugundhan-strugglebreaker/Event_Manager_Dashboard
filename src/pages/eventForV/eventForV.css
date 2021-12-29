@@ -1,0 +1,159 @@
+.eventForV{
+    flex: 4;
+    padding: 20px;
+    margin: 20px;
+    margin-top: 5px;
+    box-shadow: -1px 7px 19px -7px rgba(0,0,0,0.75);
+-webkit-box-shadow: -1px 7px 19px -7px rgba(0,0,0,0.75);
+-moz-box-shadow: -1px 7px 19px -7px rgba(0,0,0,0.75);
+}
+.eventForVTitle{
+    color: darkblue;
+}
+.eventForVTitleContainer{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+.eventForVContainer{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+
+}
+.eventForVItemsContainer{
+    width: 500px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.eventForVTextEName{
+    font-weight: 700;
+    font-size: 25px;
+    margin-left: 20px;
+}
+.eventForVText{
+    margin-left: 20px;
+}
+.eventForVIcon{
+    color: rgb(3, 3, 7);
+}
+.eventForVBottom{
+    margin-top: 30px;
+}
+.eventForVFormItem{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+.eventForInputtxt{
+    display: flex;
+    flex-direction: column;
+}
+.eventForVFormItem>label{
+    margin-bottom: 10px;
+    font-size: 19px;
+    font-weight: 600;
+    color: rgb(152,150 ,150 );
+}
+.eventForVFormItem>input{
+    height: 20px;
+    padding: 10px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    font-size: 17px;
+}
+.choosecontainerTitle{
+    color: darkblue;
+}
+.participateButton{
+    width: 200px;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    background-color: darkblue;
+    color: white;
+    margin-top: 45px;
+    margin-left: 840px;
+}
+.emojiForVContainer{
+    display: flex;
+    margin-top: 30px;
+    margin-left: 20px;
+}
+.emojiItem{
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+}
+.emojiCount{
+    margin-left: 10px;
+}
+h2>span{
+    color: greenyellow;
+}
+.emojiIcon{
+    color: red;
+}
+.emojiIconThumb{
+    color: black;
+}
+.bottom{
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    margin-left: 6px;
+    font-weight: 700;
+}
+.bottomIcon{
+    font-size: 30px;
+}
+.bottom>label{
+    margin-left: 10px;
+    font-size: 25px;
+    color: darkblue;
+}
+.feedback{
+    margin-top: 25px;
+    margin-left: 45px;
+    font-size: 20px;
+}
+.notApproved{
+    margin-top: 50px;
+}
+.notApproved>h2{
+    font-size: 30px;
+    color: darkblue;
+}
+.notApproved>h3{
+    margin-top: 20px;
+    margin-left:20px
+}
+.denied{
+    margin-top: 40px;
+}
+.denied>h2{
+    font-size: 30px;
+    color: darkblue;
+}
+.denied>h3{
+    margin-top: 10px;
+    margin-left: 20px;
+    color: red;
+}
+.deniedBottom{
+    margin-top: 20px;
+}
+.deniedBottomTitle{
+    display: flex;
+    align-items: center;   
+    margin-left: 20px;
+}
+.deniedBottomTitle>h3{
+    margin-left: 10px;
+    color: darkblue;
+}
+.deniedFeedback{
+    margin-left: 50px;
+    margin-top: 15px;
+}

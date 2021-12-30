@@ -20,6 +20,8 @@ import AllEvents from "./pages/allEvents/AllEvents";
 import ChangeEventStatus from "./pages/allEvents/ChangeEventStatus";
 import ViewEventForReg from "./pages/viewEventForReg/ViewEventForReg";
 import Login from "./pages/login/Login";
+import Request from "./pages/request/Request";
+import Volunteers from "./pages/volunteer/Volunteers";
 
 export const UserContext = React.createContext()
 
@@ -65,6 +67,8 @@ function App() {
                   <Route exact path="/allevents" element={<AllEvents/>}/>
                   <Route exact path="/view/event" element={<ViewEventForReg/>}/>
                   <Route exact path="/login" element={<Login/>}/>
+                  <Route exact path="/requests" element={<Request/>}/>
+                  <Route exact path="/volunteers" element={<Volunteers/>}/>
                 </Routes>
                
               </div>

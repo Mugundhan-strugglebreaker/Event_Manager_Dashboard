@@ -17,7 +17,7 @@ function EventDetails(props) {
         e.preventDefault();
         console.log("--->"+JSON.stringify(event))
         setErrors(validate(event))
-        setSubmit(true)
+        setSubmit(!isSubmit)
         //navigate("/events")
    }
    useCallback(

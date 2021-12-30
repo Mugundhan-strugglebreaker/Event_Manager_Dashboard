@@ -4,8 +4,8 @@ import axios from 'axios'
 import { UserContext } from '../../App';
 
 function CustomTooltipForAttempts({ payload, label, active }) {
-    //  console.log(payload)
-    if (active) {
+    console.log(payload)
+    if (active && payload!==null) {
       return (
         <div className="custom-tooltip">
           <p className="label">{`Event Name: ${payload[0].payload.event_name}`}</p>
@@ -18,8 +18,8 @@ function CustomTooltipForAttempts({ payload, label, active }) {
   }
   
 function CustomTooltipForRegitered({ payload, label, active }) {
-    //  console.log(payload)
-    if (active) {
+   console.log(payload)
+    if (active && payload!==null) {
       return (
         <div className="custom-tooltip">
           <p className="label">{`Event Name: ${payload[0].payload.event_name}`}</p>
@@ -31,8 +31,8 @@ function CustomTooltipForRegitered({ payload, label, active }) {
     return null;
   }
   function CustomTooltipForCreditsGained({ payload, label, active }) {
-    // console.log(payload)
-    if (active) {
+    console.log(payload)
+    if (active && payload!==null) {
       return (
         <div className="custom-tooltip">
           <p className="label">{`Event Name: ${payload[0].payload.event_name}`}</p>

@@ -92,7 +92,7 @@ function EventForV() {
                             <div className='eventForVFormItem'>
                                     <label>Feedback</label>
                                     <input type='text' className='participateInput' value={feedback} onChange={changeHandler} required/>
-                                    <button className='participateButton'>Participate</button>
+                                    <button className='participateButton'>Participated</button>
                             </div>
                            
                         </form>

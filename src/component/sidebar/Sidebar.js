@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import './sidebar.css'
 import {LineStyle,Timeline,Person,Event,History,NotificationsActive,Message, EventNote} from "@material-ui/icons"
 import { Link } from 'react-router-dom'
+import { UserContext } from '../../App'
 function Sidebar() {
+    const userDetails = useContext(UserContext)
     return (
         <div className='sidebar'>
             <div className='sidebarWrapper'>
@@ -15,10 +17,6 @@ function Sidebar() {
                                 Home
                             </li>
                         </Link>
-                        {/* <li className='sidebarListItem'>
-                            <Timeline className='sidebarIcon'/>
-                            Analytics
-                        </li> */}
                         <Link to="/profile" className='link'>
                             <li className='sidebarListItem'>
                                 <Person className='sidebarIcon'/>
@@ -42,24 +40,33 @@ function Sidebar() {
                                 All Events
                             </li>
                         </Link>
-                        <li className='sidebarListItem'>
-                            <Person className='sidebarIcon'/>
-                            Volunteers
-                        </li>
+                        <Link to="/volunteers" className='link'>
+                            <li className='sidebarListItem'>
+                                <Person className='sidebarIcon'/>
+                                Volunteers
+                            </li>
+                        </Link>
                     </ul>
                 </div>
                 <div className='sidebarMenu'>
-                    <h3 className='sidebarTitle'>Notifications</h3>
-                    <ul className='sidebarList'>
-                        <li className='sidebarListItem '>
-                            <NotificationsActive className='sidebarIcon'/>
-                            Requests
-                        </li>
-                        <li className='sidebarListItem'>
-                            <Message className='sidebarIcon'/>
-                            Messages
-                        </li>
-                    </ul>
+                    
+                        {
+                            (userDetails.role==='A')? (
+                            <>
+                                <h3 className='sidebarTitle'>Notifications</h3>
+                                <ul className='sidebarList'>
+                                    <Link to='/requests' className='link'>
+                                        <li className='sidebarListItem '>
+                                            <NotificationsActive className='sidebarIcon'/>
+                                            Requests
+                                        </li>
+                                    </Link>
+                                </ul>
+                            </>
+                            ):null
+                        }
+                        
+                    
                 </div>
                 
             </div>

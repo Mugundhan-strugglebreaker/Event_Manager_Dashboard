@@ -1,0 +1,14 @@
+.empList {
+    flex: 4;
+    padding: 20px;
+  }
+  .empTitleContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .eventDataGrid {
+    height: 500;
+    width: "100%";
+  }

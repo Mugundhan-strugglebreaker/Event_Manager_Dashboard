@@ -2,7 +2,8 @@
     flex: 4;
     padding: 20px;
     margin: 20px;
-    margin-top: 5px;
+    margin-top: 0px;
+    margin-bottom: 7px;
     box-shadow: -1px 7px 19px -7px rgba(0,0,0,0.75);
 -webkit-box-shadow: -1px 7px 19px -7px rgba(0,0,0,0.75);
 -moz-box-shadow: -1px 7px 19px -7px rgba(0,0,0,0.75);
@@ -73,7 +74,7 @@
     border: none;
     background-color: darkblue;
     color: white;
-    margin-top: 45px;
+    margin-top: 25px;
     margin-left: 840px;
 }
 .emojiForVContainer{

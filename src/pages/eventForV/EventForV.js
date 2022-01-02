@@ -19,6 +19,8 @@ function EventForV() {
         "feedback": "You have not attended the event"
     }
     )
+    const [errors,setErrors] = useState({})
+    const [isSubmit,setIsSumbit] = useState(false)
     useEffect(()=>{
         axios.post("http://localhost:9000/event/attemptdetails",{
             "event_history_id":event.event_history_id
@@ -32,18 +34,42 @@ function EventForV() {
     },[])
     const submitFeedbackHandler = (e)=>{
         e.preventDefault()
-        axios.post("http://localhost:9000/event/participate",{
-            "event_history_id":event.event_history_id,
-            "feedback":feedback
-        }).then(response=>{
-            navigate("/events")
-        }).catch(error=>{
-            alert("error",error)
-        })
-        // alert(feedback)
+        setErrors(validate())
+        setIsSumbit(true)
     }
+    useEffect(()=>{
+        if(Object.keys(errors).length===0 && isSubmit){
+            axios.post("http://localhost:9000/event/participate",{
+                "event_history_id":event.event_history_id,
+                "feedback":feedback
+            }).then(response=>{
+                navigate("/events")
+            }).catch(error=>{
+                alert("error",error)
+            })
+        }else{
+            setIsSumbit(false)
+        }
+    },[isSubmit])
+    const validate=()=>{
+        let error = {}
+        var today = new Date();
+        var dd = String(today.getDate()).padStart(2, '0');
+        var mm = String(today.getMonth() + 1).padStart(2, '0');
+        var yyyy = today.getFullYear();
+        today = yyyy+ '-' + mm + '-' + dd;
+        if(!feedback){
+            error.feedback = "Feedback is Required!!"
+        }
+        if(!(today>=event.date)){
+            error.date = "Event is not conducted yet!!!"
+        }
+        return error;
+    }
+
     const changeHandler = (e)=>{
         setFeedback(e.target.value)
+        setErrors({})
     }
     return (
         <div className='eventForV'>
@@ -86,17 +112,21 @@ function EventForV() {
             </div>
             <div className='eventForVBottom'>
                 {event.status==='Registered'?(
-                    <div className='choosecontainer'>
-                        <h1 className='choosecontainerTitle'>Participate</h1>
-                        <form className='eventForVForm' onSubmit={submitFeedbackHandler}>
-                            <div className='eventForVFormItem'>
-                                    <label>Feedback</label>
-                                    <input type='text' className='participateInput' value={feedback} onChange={changeHandler} required/>
-                                    <button className='participateButton'>Participated</button>
-                            </div>
-                           
-                        </form>
-                    </div>
+                    <>
+                        <div className='choosecontainer'>
+                            <h1 className='choosecontainerTitle'>Participate</h1>
+                            <form className='eventForVForm' onSubmit={submitFeedbackHandler}>
+                                <div className='eventForVFormItem'>
+                                        <label>Feedback</label>
+                                        <input type='text' className='participateInput' value={feedback} onChange={changeHandler}/>
+                                        <p className='error'>{errors.feedback}</p>
+                                        <p className='error'>{errors.date}</p>
+                                        <button className='participateButton'>Participated</button>
+                                </div>
+                                
+                            </form>
+                        </div>
+                    </>
                 )
                 :
                     <div>

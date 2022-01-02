@@ -25,7 +25,6 @@ function Topbar() {
         // alert("Logout")
         window.location.reload("/")
     }
-
     return (
         <div className='topbar'>
             <div className='topbarWrapper'>
@@ -48,6 +47,9 @@ function Topbar() {
                     </div>
                     <div className='topbarIconContainer'>
                         <AccountCircle/>
+                    </div>
+                    <div className='topbarIconContainer'>
+                        {user.emp_name}
                     </div>
                 </div>
             </div>

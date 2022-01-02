@@ -29,7 +29,7 @@ function Request() {
     //     }
 
     // ]
-  
+    
     const acceptHandler = (details)=>{
       // details.preventDefault()
       // alert(JSON.stringify(details))
@@ -41,6 +41,7 @@ function Request() {
        }).catch(err=>{
          alert("Error")
        })
+      
     }
     const rejectHandler = (details,e)=>{
       e.preventDefault()

@@ -4,6 +4,7 @@ import { useLocation,useNavigate } from 'react-router';
 import {CalendarToday, CardGiftcard, Category, Event, LocationOn, Schedule, Stars} from '@material-ui/icons';
 import ExtractVoluteerStatus from './ExtractVoluteerStatus';
 import axios from 'axios';
+import Popup from './Popup';
 export const EventContext = React.createContext()
 function EventDetails(props) {
     const navigate = useNavigate()
@@ -13,6 +14,7 @@ function EventDetails(props) {
     const [event,setEvent] = useState(event_details)
     const [errors,setErrors] = useState({})
     const [isSubmit,setSubmit] = useState(false)
+    const [showPopup,setPopup] = useState(false)
     const submitHandler = (e)=>{
         e.preventDefault();
         console.log("--->"+JSON.stringify(event))
@@ -69,11 +71,12 @@ function EventDetails(props) {
     }
     return (
         <div className='event'>
+            <Popup trigger={showPopup} setPopup={setPopup} event_id={event.event_id}/>
             <div className='eventContainer'>
                 <div className='editEvent'>
                     <div className='editDeleteContainer'>
                         <h1 className='editEventTitle'>Edit</h1>
-                        <button className='deleteEventButton'>Delete</button>
+                        <button className='deleteEventButton' onClick={()=>setPopup(true)} disabled={event.is_complete}>Delete</button>
                     </div>
                     <form onSubmit={submitHandler}>
                         <div className='editEventItem'>

@@ -158,3 +158,9 @@ h2>span{
     margin-left: 50px;
     margin-top: 15px;
 }
+.errorFeedback{
+    color: red;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 5px;
+}

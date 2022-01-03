@@ -119,8 +119,8 @@ function EventForV() {
                                 <div className='eventForVFormItem'>
                                         <label>Feedback</label>
                                         <input type='text' className='participateInput' value={feedback} onChange={changeHandler}/>
-                                        <p className='error'>{errors.feedback}</p>
-                                        <p className='error'>{errors.date}</p>
+                                        <p className='errorFeedback'>{errors.feedback}</p>
+                                        <p className='errorFeedback'>{errors.date}</p>
                                         <button className='participateButton'>Participated</button>
                                 </div>
                                 

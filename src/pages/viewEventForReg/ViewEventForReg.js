@@ -128,7 +128,7 @@ function ViewEventForReg() {
                     regStatus === 1 ? <h3>Registered</h3>:null
                 }
                 {
-                    regStatus === 2 ? <h3>Attempted</h3>:null
+                    regStatus === 2 ? <h3>Attended</h3>:null
                 }
                 
             </div>

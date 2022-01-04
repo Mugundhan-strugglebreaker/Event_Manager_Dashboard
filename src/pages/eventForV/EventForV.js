@@ -169,7 +169,7 @@ function EventForV() {
                                 <div >
                                     <div className='notApproved'>
                                         <h2>Status:</h2>
-                                        <h3>Attempted but Not yet Approved By Admin!!!</h3>
+                                        <h3>Attended but Not yet Approved By Admin!!!</h3>
                                     </div>
                                 </div>
                                 ):null

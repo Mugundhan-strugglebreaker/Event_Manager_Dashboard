@@ -61,7 +61,7 @@ function ChooseUser() {
                     </div>
                 </div>
                 <div className='featuredItem'>
-                    <span className='featuredTitle'>Events Attempted</span>
+                    <span className='featuredTitle'>Events Attended</span>
                     <div className='featuredContainer'>
                         <EventAvailable className='featuredIcon'/>
                         <span className='eventsCreated'>{info.AttemptCount}</span>

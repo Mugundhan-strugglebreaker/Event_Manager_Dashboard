@@ -11,11 +11,11 @@ function Charts() {
         return (
             <div>
                 <div className='charts'>
-                    <h3 className='chartTitle'>Register Analysis</h3>
+                    <h3 className='chartTitle'>Registered Analysis</h3>
                     <Analysis type="Register" role="A"/>
                 </div>
                 <div className='charts'>
-                    <h3 className='chartTitle'>Attempt Analysis</h3>
+                    <h3 className='chartTitle'>Attender Analysis</h3>
                     <Analysis type="Attempt" role="A" />
                 </div>
             </div>
